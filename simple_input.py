@@ -4,7 +4,7 @@ def get_input():
     if verbo_word in verb_dict:
         verb = verb_dict[verbo_word]
     else:
-        print("Unknown verb {}".format(verbo_word))
+        print("Unknown verb: {}".format(''.join(str(e)+' ' for e in command)))
         return
 
     if len(command) >= 2:
@@ -25,7 +25,7 @@ class Quit_Loop(Exception):
     pass
 # quit
 def exit(exitComm):
-    print('I will '+exitComm+' !')
+    print('I will {} !'.format(exitComm))
     raise Quit_Loop
 
 # link verb with action
